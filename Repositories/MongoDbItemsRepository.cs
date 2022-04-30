@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Catalog.Entities;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Catalog.Repositories
@@ -24,22 +25,25 @@ namespace Catalog.Repositories
 
         public void DeleteItem(Guid id)
         {
-            throw new NotImplementedException();
+            itemsCollection.DeleteOne(item => item.Id.Equals(id));
         }
 
         public Item GetItem(Guid id)
         {
-            throw new NotImplementedException();
+            return itemsCollection.Find(item => item.Id.Equals(id)).FirstOrDefault();
         }
 
         public IEnumerable<Item> GetItems()
         {
-            throw new NotImplementedException();
+            return itemsCollection.Find(new BsonDocument()).ToList();
         }
 
         public void UpdateItem(Item item)
         {
-            throw new NotImplementedException();
+            itemsCollection.ReplaceOneAsync
+            (
+                itemExisting => itemExisting.Id == item.Id, item
+            );
         }
     }
 }
