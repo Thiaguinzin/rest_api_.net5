@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Catalog.Entities;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -18,29 +19,29 @@ namespace Catalog.Repositories
             itemsCollection = database.GetCollection<Item>(collectionName);
         }
 
-        public void CreateItem(Item item)
+        public async Task CreateItemAsync(Item item)
         {
-            itemsCollection.InsertOne(item);
+            await itemsCollection.InsertOneAsync(item);
         }
 
-        public void DeleteItem(Guid id)
+        public async Task DeleteItemAsync(Guid id)
         {
-            itemsCollection.DeleteOne(item => item.Id.Equals(id));
+            await itemsCollection.DeleteOneAsync(item => item.Id.Equals(id));
         }
 
-        public Item GetItem(Guid id)
+        public async Task<Item> GetItemAsync(Guid id)
         {
-            return itemsCollection.Find(item => item.Id.Equals(id)).FirstOrDefault();
+            return await itemsCollection.Find(item => item.Id.Equals(id)).FirstOrDefaultAsync();
         }
 
-        public IEnumerable<Item> GetItems()
+        public async Task<IEnumerable<Item>> GetItemsAsync()
         {
-            return itemsCollection.Find(new BsonDocument()).ToList();
+            return await itemsCollection.Find(new BsonDocument()).ToListAsync();
         }
 
-        public void UpdateItem(Item item)
+        public async Task UpdateItemAsync(Item item)
         {
-            itemsCollection.ReplaceOneAsync
+            await itemsCollection.ReplaceOneAsync
             (
                 itemExisting => itemExisting.Id == item.Id, item
             );
