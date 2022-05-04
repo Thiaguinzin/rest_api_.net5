@@ -43,3 +43,14 @@ D:\projects\Catalog\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
 D:\projects\Catalog\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
 D:\projects\Catalog\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
 D:\projects\Catalog\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+D:\projects\Catalog\bin\Debug\net5.0\HealthChecks.MongoDb.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\projects\Catalog\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\projects\Catalog\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
