@@ -1,0 +1,26 @@
+After installing docker extension in VSCode:
+
+View > Command Palette > and type "docker:add docker", port 80
+
+----- To build dockerimage
+docker build -t catalog:v1 .
+-----
+
+----- To create a network
+docker network create (name)
+-----
+
+docker images
+docker network
+
+-- To push an image into a DockerHub, you must first tag thiaguinzi->UserId
+docker tag catalog:v1 thiaguinzin/catalog:v1
+---
+
+-- Get a image in that DockerHub
+docker run -it --rm -p 8080:80 -e MongoDbSettings:Host=mongo -e MongoDbSettings:Password=yourpassword --network=net5apirest thiaguinzin/catalog:v1
+--
+
+docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=yourpassword --network=net5apirest mongo
+
+docker run -it --rm -p 8080:80 -e MongoDbSettings:Host=mongo -e MongoDbSettings:Password=yourpassword --network=net5apirest catalog:v1
